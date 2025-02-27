@@ -11,7 +11,9 @@ public class ApplicationContext {
     private Repository<Office> officeRepository;
 
     public ApplicationContext() {
-        // Инициализация
+        flatRoomRepository = new Repository<>();
+        houseRepository = new Repository<>();
+        officeRepository = new Repository<>();
     }
 
     public Repository<FlatRoom> getFlatRoomRepository() {
