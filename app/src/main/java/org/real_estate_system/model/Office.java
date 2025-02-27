@@ -1,4 +1,4 @@
-package org.example.model;
+package org.real_estate_system.model;
 
 public class Office extends Entity {
     // конструктор с super(address, area),

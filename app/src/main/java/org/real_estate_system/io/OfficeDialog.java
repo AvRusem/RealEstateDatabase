@@ -1,8 +1,8 @@
-package org.example.io;
+package org.real_estate_system.io;
 
 
-import org.example.model.Office;
-import org.example.repository.Repository;
+import org.real_estate_system.model.Office;
+import org.real_estate_system.repository.Repository;
 
 public class OfficeDialog extends AbstractDialog<Office> {
     

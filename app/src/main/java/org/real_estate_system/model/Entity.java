@@ -1,4 +1,4 @@
-package org.example.model;
+package org.real_estate_system.model;
 
 public abstract class Entity {
     

@@ -1,9 +1,9 @@
-package org.example;
+package org.real_estate_system;
 
-import org.example.model.FlatRoom;
-import org.example.model.House;
-import org.example.model.Office;
-import org.example.repository.Repository;
+import org.real_estate_system.model.FlatRoom;
+import org.real_estate_system.model.House;
+import org.real_estate_system.model.Office;
+import org.real_estate_system.repository.Repository;
 
 public class ApplicationContext {
     private Repository<FlatRoom> flatRoomRepository;

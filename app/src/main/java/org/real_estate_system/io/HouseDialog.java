@@ -1,7 +1,7 @@
-package org.example.io;
+package org.real_estate_system.io;
 
-import org.example.model.House;
-import org.example.repository.Repository;
+import org.real_estate_system.model.House;
+import org.real_estate_system.repository.Repository;
 
 public class HouseDialog extends AbstractDialog<House> {
 

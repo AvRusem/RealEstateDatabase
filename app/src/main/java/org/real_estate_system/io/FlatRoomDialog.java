@@ -1,7 +1,7 @@
-package org.example.io;
+package org.real_estate_system.io;
 
-import org.example.model.FlatRoom;
-import org.example.repository.Repository;
+import org.real_estate_system.model.FlatRoom;
+import org.real_estate_system.repository.Repository;
 
 public class FlatRoomDialog extends AbstractDialog<FlatRoom> {
     

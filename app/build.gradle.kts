@@ -41,7 +41,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "org.example.Application"
+    mainClass = "org.real_estate_system.Application"
 }
 
 

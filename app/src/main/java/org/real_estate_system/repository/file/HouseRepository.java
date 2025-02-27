@@ -1,7 +1,7 @@
-package org.example.repository.file;
+package org.real_estate_system.repository.file;
 
-import org.example.model.House;
-import org.example.repository.AbstractFileRepository;
+import org.real_estate_system.model.House;
+import org.real_estate_system.repository.AbstractFileRepository;
 
 public class HouseRepository extends AbstractFileRepository<House> {
     

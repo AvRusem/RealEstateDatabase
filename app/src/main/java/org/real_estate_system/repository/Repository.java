@@ -1,4 +1,4 @@
-package org.example.repository;
+package org.real_estate_system.repository;
 
 import java.util.List;
 

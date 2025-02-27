@@ -1,7 +1,7 @@
-package org.example.repository.file;
+package org.real_estate_system.repository.file;
 
-import org.example.model.Office;
-import org.example.repository.AbstractFileRepository;
+import org.real_estate_system.model.Office;
+import org.real_estate_system.repository.AbstractFileRepository;
 
 public class OfficeRepository extends AbstractFileRepository<Office> {
     

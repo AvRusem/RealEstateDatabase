@@ -1,4 +1,4 @@
-package org.example;
+package org.real_estate_system;
 
 public class Application {
     public static void main(String[] args) {

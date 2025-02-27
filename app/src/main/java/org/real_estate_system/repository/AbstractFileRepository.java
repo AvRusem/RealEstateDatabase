@@ -1,4 +1,4 @@
-package org.example.repository;
+package org.real_estate_system.repository;
 
 public abstract class AbstractFileRepository<T> implements Repository<T> {
     private final String fileName;

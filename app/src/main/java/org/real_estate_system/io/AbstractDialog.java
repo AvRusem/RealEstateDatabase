@@ -1,6 +1,6 @@
-package org.example.io;
+package org.real_estate_system.io;
 
-import org.example.repository.Repository;
+import org.real_estate_system.repository.Repository;
 
 public abstract class AbstractDialog<T> {
     private final Repository<T> repository;
