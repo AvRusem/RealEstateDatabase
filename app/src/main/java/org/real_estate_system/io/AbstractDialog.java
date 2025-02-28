@@ -35,7 +35,7 @@ public abstract class AbstractDialog<T> {
         System.out.println("[0] - Выход");
     }
 
-    private int readChoice() {
+    public int readChoice() {
         while (true) {
             System.out.print("Выберите пункт меню: ");
             String input = scanner.nextLine();
