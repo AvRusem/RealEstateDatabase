@@ -3,6 +3,7 @@ package org.real_estate_system.io;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.real_estate_system.model.FlatRoom;
@@ -18,18 +19,16 @@ public class FlatRoomDialogTest {
     @Mock
     private Repository<FlatRoom> repository;
 
+    @InjectMocks
     private FlatRoomDialog dialog;
 
     @Test
     void testGetEntityName() {
-        dialog = new FlatRoomDialog(repository);
-
         assertEquals("FlatRoom", dialog.getEntityName());
     }
 
     @Test
     void testFormat() {
-        dialog = new FlatRoomDialog(repository);
         FlatRoom flatRoom = new FlatRoom("Gasheka, 7", 150, 12, 3);
         String formatted = dialog.format(flatRoom);
 

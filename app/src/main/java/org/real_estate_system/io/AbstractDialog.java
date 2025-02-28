@@ -28,16 +28,23 @@ public abstract class AbstractDialog<T> {
 
     private void printMenu() {
         System.out.println("[" + getEntityName() + "]");
-        System.out.println("[1] - Show all");
-        System.out.println("[2] - Create");
-        System.out.println("[3] - Update");
-        System.out.println("[4] - Delete");
-        System.out.println("[0] - Exit");
+        System.out.println("[1] - Показать все");
+        System.out.println("[2] - Создать");
+        System.out.println("[3] - Обновить");
+        System.out.println("[4] - Удалить");
+        System.out.println("[0] - Выход");
     }
 
     private int readChoice() {
-        System.out.print("Enter your choice: ");
-        return scanner.nextInt();
+        while (true) {
+            System.out.print("Выберите пункт меню: ");
+            String input = scanner.nextLine();
+            try {
+                return Integer.parseInt(input);
+            } catch (NumberFormatException e) {
+                System.out.println("Некорректный выбор. Введите число от 0 до 4.");
+            }
+        }
     }
 
     private void handleChoice(int choice) {
@@ -62,7 +69,7 @@ public abstract class AbstractDialog<T> {
     public void showAll() {
         List<T> entities = repository.getAll();
         if (entities.isEmpty()) {
-            System.out.println("No entities found.");
+            System.out.println("Список пуст.");
         } else {
             for (int i = 0; i < entities.size(); i++) {
                 System.out.println("[" + i + "] - " + format(entities.get(i)));
@@ -82,9 +89,18 @@ public abstract class AbstractDialog<T> {
             System.out.println("Список пуст.");
             return;
         }
-        showAll();
-        System.out.print("Введите индекс обновляемого объекта: ");
-        int index = scanner.nextInt();
+        showAll(); 
+        int index;
+        while (true) {
+            System.out.print("Введите индекс обновляемого объекта: ");
+            String input = scanner.nextLine();
+            try {
+                index = Integer.parseInt(input);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Некорректный выбор.");
+            }
+        }
         if (index >= 0 && index < entities.size()) {
             T entity = read();
             repository.update(index, entity);
@@ -101,8 +117,17 @@ public abstract class AbstractDialog<T> {
             return;
         }
         showAll();
-        System.out.print("Введите индекс удаляемого объекта: ");
-        int index = scanner.nextInt();
+        int index;
+        while (true) {
+            System.out.print("Введите индекс удаляемого объекта: ");
+            String input = scanner.nextLine();
+            try {
+                index = Integer.parseInt(input);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Некорректный выбор.");
+            }
+        }
         if (index >= 0 && index < entities.size()) {
             repository.delete(index);
             System.out.println("Успех.");
