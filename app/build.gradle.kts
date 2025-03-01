@@ -20,6 +20,7 @@ repositories {
 dependencies {
     // This dependency is used by the application.
     implementation(libs.guava)
+    implementation("io.github.cdimascio:dotenv-java:3.2.0")
 }
 
 testing {

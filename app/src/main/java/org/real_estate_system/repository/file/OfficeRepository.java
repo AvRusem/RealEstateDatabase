@@ -9,7 +9,6 @@ public class OfficeRepository extends AbstractFileRepository<Office> {
         super(filename);
     }
 
-
     @Override
     protected Office deserialize(String content) {
         String[] splited = content.split("\0");
