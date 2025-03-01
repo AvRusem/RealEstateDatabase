@@ -8,11 +8,15 @@ import org.real_estate_system.repository.Repository;
 
 public abstract class AbstractDialog<T> {
     private final Repository<T> repository;
-    private final Scanner scanner;
+    private Scanner scanner;
 
     protected AbstractDialog(Repository<T> repository) {
         this.repository = repository;
         this.scanner = new Scanner(System.in);
+    }
+
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
     }
 
     public void run() {
