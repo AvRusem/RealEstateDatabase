@@ -13,7 +13,6 @@ import org.real_estate_system.repository.file.HouseRepository;
 import org.real_estate_system.repository.file.OfficeRepository;
 
 import io.github.cdimascio.dotenv.Dotenv;
-import io.github.cdimascio.dotenv.DotenvException;
 
 public class ApplicationContext {
     private Repository<FlatRoom> flatRoomRepository;
@@ -26,9 +25,9 @@ public class ApplicationContext {
 
     public ApplicationContext() {
         String repoName = getRepo();
-        flatRoomRepository = new FlatRoomRepository(repoName + "/flat_room");
-        houseRepository = new HouseRepository(repoName + "/house");
-        officeRepository = new OfficeRepository(repoName + "/office");
+        flatRoomRepository = new FlatRoomRepository(repoName + "/flat_room.csv");
+        houseRepository = new HouseRepository(repoName + "/house.csv");
+        officeRepository = new OfficeRepository(repoName + "/office.csv");
 
         flatRoomDialog = new FlatRoomDialog(flatRoomRepository);
         houseDialog = new HouseDialog(houseRepository);
