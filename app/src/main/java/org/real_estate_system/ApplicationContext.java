@@ -25,7 +25,7 @@ public class ApplicationContext {
         String repoName = getRepo();
         flatRoomRepository = new FlatRoomRepository(repoName + "/flat_room");
         houseRepository = new HouseRepository(repoName + "/house");
-        officeRepository = new OfficeRepository(repoName + "office");
+        officeRepository = new OfficeRepository(repoName + "/office");
 
         flatRoomDialog = new FlatRoomDialog(flatRoomRepository);
         houseDialog = new HouseDialog(houseRepository);
