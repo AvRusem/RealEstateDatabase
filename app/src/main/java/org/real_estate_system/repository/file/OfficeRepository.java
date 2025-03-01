@@ -10,5 +10,29 @@ public class OfficeRepository extends AbstractFileRepository<Office> {
     }
 
 
-    // оверрайды deserialize и serialize
+    @Override
+    protected Office deserialize(String content) {
+        String[] splited = content.split("\0");
+        if (splited.length != 3)
+            throw new IllegalArgumentException("Error parsing: " + content);
+        
+        return new Office(
+            splited[0],
+            Double.parseDouble(splited[1]),
+            splited[2]
+        );
+    }
+
+    @Override
+    protected String serialize(Office object) {
+        StringBuilder builder = new StringBuilder();
+        builder.append(object.getArea());
+        builder.append("\0");
+        builder.append(object.getAddress());
+        builder.append("\0");
+        builder.append(object.getOfficeOwner());
+        builder.append("\0");
+
+        return builder.toString();
+    }
 }
