@@ -12,6 +12,8 @@ import org.real_estate_system.repository.file.FlatRoomRepository;
 import org.real_estate_system.repository.file.HouseRepository;
 import org.real_estate_system.repository.file.OfficeRepository;
 
+import io.github.cdimascio.dotenv.Dotenv;
+
 public class ApplicationContext {
     private Repository<FlatRoom> flatRoomRepository;
     private Repository<House> houseRepository;
@@ -23,9 +25,9 @@ public class ApplicationContext {
 
     public ApplicationContext() {
         String repoName = getRepo();
-        flatRoomRepository = new FlatRoomRepository(repoName + "/flat_room");
-        houseRepository = new HouseRepository(repoName + "/house");
-        officeRepository = new OfficeRepository(repoName + "/office");
+        flatRoomRepository = new FlatRoomRepository(repoName + "/flat_room.csv");
+        houseRepository = new HouseRepository(repoName + "/house.csv");
+        officeRepository = new OfficeRepository(repoName + "/office.csv");
 
         flatRoomDialog = new FlatRoomDialog(flatRoomRepository);
         houseDialog = new HouseDialog(houseRepository);
@@ -56,9 +58,10 @@ public class ApplicationContext {
     }
 
     private String getRepo() {
-        String repo = System.getProperty("Repository");
+        Dotenv dotenv = Dotenv.load();
+        String repo = dotenv.get("REPOSITORY");
         if (repo == null)
-            throw new MissingEnvironmentVariable("Can not fine Repository variable in .env");
+            throw new MissingEnvironmentVariable("Can not find REPOSITORY variable in .env");
         
         return repo;
     }

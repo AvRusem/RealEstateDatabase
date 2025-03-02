@@ -9,7 +9,6 @@ public class OfficeRepository extends AbstractFileRepository<Office> {
         super(filename);
     }
 
-
     @Override
     protected Office deserialize(String content) {
         String[] splited = content.split("\0");
@@ -17,8 +16,8 @@ public class OfficeRepository extends AbstractFileRepository<Office> {
             throw new IllegalArgumentException("Error parsing: " + content);
         
         return new Office(
-            splited[0],
-            Double.parseDouble(splited[1]),
+            splited[1],
+            Double.parseDouble(splited[0]),
             splited[2]
         );
     }

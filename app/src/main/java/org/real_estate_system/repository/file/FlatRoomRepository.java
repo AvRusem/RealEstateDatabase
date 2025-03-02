@@ -16,8 +16,8 @@ public class FlatRoomRepository extends AbstractFileRepository<FlatRoom> {
             throw new IllegalArgumentException("Error parsing: " + content);
         
         return new FlatRoom(
-            splited[0],
-            Double.parseDouble(splited[1]),
+            splited[1],
+            Double.parseDouble(splited[0]),
             Integer.parseInt(splited[2]),
             Integer.parseInt(splited[3])
         );
