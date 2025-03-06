@@ -11,7 +11,7 @@ public class OfficeRepository extends AbstractFileRepository<Office> {
 
     @Override
     protected Office deserialize(String content) {
-        String[] splited = content.split("\0");
+        String[] splited = content.split(delimiter);
         if (splited.length != 3)
             throw new IllegalArgumentException("Error parsing: " + content);
         
@@ -26,11 +26,11 @@ public class OfficeRepository extends AbstractFileRepository<Office> {
     protected String serialize(Office object) {
         StringBuilder builder = new StringBuilder();
         builder.append(object.getArea());
-        builder.append("\0");
+        builder.append(delimiter);
         builder.append(object.getAddress());
-        builder.append("\0");
+        builder.append(delimiter);
         builder.append(object.getOfficeOwner());
-        builder.append("\0");
+        builder.append(delimiter);
 
         return builder.toString();
     }

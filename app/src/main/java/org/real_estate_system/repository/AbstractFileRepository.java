@@ -6,6 +6,7 @@ import java.util.List;
 
 public abstract class AbstractFileRepository<T> implements Repository<T> {
     private final String filePath;
+    protected final String delimiter = "\0";
 
     public AbstractFileRepository(String filePath) {
         this.filePath = filePath;

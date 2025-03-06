@@ -11,7 +11,7 @@ public class FlatRoomRepository extends AbstractFileRepository<FlatRoom> {
 
     @Override
     protected FlatRoom deserialize(String content) {
-        String[] splited = content.split("\0");
+        String[] splited = content.split(delimiter);
         if (splited.length != 4)
             throw new IllegalArgumentException("Error parsing: " + content);
         
@@ -27,13 +27,13 @@ public class FlatRoomRepository extends AbstractFileRepository<FlatRoom> {
     protected String serialize(FlatRoom object) {
         StringBuilder builder = new StringBuilder();
         builder.append(object.getArea());
-        builder.append("\0");
+        builder.append(delimiter);
         builder.append(object.getAddress());
-        builder.append("\0");
+        builder.append(delimiter);
         builder.append(object.getFloor());
-        builder.append("\0");
+        builder.append(delimiter);
         builder.append(object.getFlatNumber());
-        builder.append("\0");
+        builder.append(delimiter);
 
         return builder.toString();
     }
