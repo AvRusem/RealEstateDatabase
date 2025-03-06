@@ -25,10 +25,10 @@ public class Application {
     }
 
     private static void printMenu() {
-        System.out.println("[1] - Houses");
-        System.out.println("[2] - FlatRooms");
-        System.out.println("[3] - Offices");
-        System.out.println("[0] - Exit");
+        System.out.println("[1] - Дома");
+        System.out.println("[2] - Квартиры");
+        System.out.println("[3] - Офисы");
+        System.out.println("[0] - Выход");
     }
 
     private static int readChoice() {
