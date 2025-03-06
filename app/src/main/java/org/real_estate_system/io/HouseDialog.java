@@ -42,7 +42,7 @@ public class HouseDialog extends AbstractDialog<House> {
             }
         }
 
-        double area = 0;
+        double area;
         while (true) {
             System.out.print("Введите площадь: ");
             try {
@@ -53,7 +53,7 @@ public class HouseDialog extends AbstractDialog<House> {
             }
         }
 
-        int floors = 0;
+        int floors;
         while (true) {
             System.out.print("Введите количество этажей: ");
             try {
@@ -72,7 +72,6 @@ public class HouseDialog extends AbstractDialog<House> {
                 hasGarage = true;
                 break;
             } else if (garageInput.equals("нет")) {
-                hasGarage = false;
                 break;
             } else {
                 System.out.println("Некорректный ввод. Введите \"да\" или \"нет\".");

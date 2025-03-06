@@ -42,7 +42,7 @@ public class OfficeDialog extends AbstractDialog<Office> {
             }
         }
 
-        double area = 0;
+        double area;
         while (true) {
             System.out.print("Введите площадь: ");
             try {
@@ -53,10 +53,9 @@ public class OfficeDialog extends AbstractDialog<Office> {
             }
         }
 
-        System.out.println("Введите имя владельца офиса: ");
         String officeOwner = "";
         while (officeOwner.trim().isEmpty()) { 
-            System.out.print("Введите адрес: ");
+            System.out.print("Введите имя владельца офиса: ");
             officeOwner = scanner.nextLine().trim();
             if (officeOwner.trim().isEmpty()) {
                 System.out.println("Имя владельца не может быть пустым. Повторите ввод");

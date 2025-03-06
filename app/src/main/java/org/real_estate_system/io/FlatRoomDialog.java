@@ -53,7 +53,7 @@ public class FlatRoomDialog extends AbstractDialog<FlatRoom> {
             }
         }
 
-        int floor = 0;
+        int floor;
         while (true) {
             System.out.print("Введите этаж: ");
             try {
@@ -64,7 +64,7 @@ public class FlatRoomDialog extends AbstractDialog<FlatRoom> {
             }
         }
 
-        int flatNumber = 0;
+        int flatNumber;
         while (true) {
             System.out.print("Введите номер квартиры: ");
             try {
