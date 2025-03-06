@@ -20,7 +20,7 @@ public class HouseDialog extends AbstractDialog<House> {
 
     @Override
     protected String getEntityName() {
-        return "House";
+        return "Дом";
     }
 
     @Override

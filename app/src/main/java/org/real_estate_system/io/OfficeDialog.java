@@ -21,7 +21,7 @@ public class OfficeDialog extends AbstractDialog<Office> {
 
     @Override
     protected String getEntityName() {
-        return "Office";
+        return "Офис";
     }
 
     @Override

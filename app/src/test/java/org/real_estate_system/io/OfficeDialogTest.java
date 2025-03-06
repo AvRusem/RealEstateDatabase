@@ -22,7 +22,7 @@ public class OfficeDialogTest {
     void testGetEntityName() {
         dialog = new OfficeDialog(repository);
         
-        assertEquals("Office", dialog.getEntityName());
+        assertEquals("Офис", dialog.getEntityName());
     }
 
     @Test

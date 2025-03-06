@@ -23,7 +23,7 @@ public class HouseDialogTest {
     void testGetEntityName() {
         dialog = new HouseDialog(repository);
 
-        assertEquals("House", dialog.getEntityName());
+        assertEquals("Дом", dialog.getEntityName());
     }
     
     @Test

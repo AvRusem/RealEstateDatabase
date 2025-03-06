@@ -20,7 +20,7 @@ public class FlatRoomDialog extends AbstractDialog<FlatRoom> {
 
     @Override
     protected String getEntityName() {
-        return "FlatRoom";
+        return "Квартира";
     }
 
     @Override

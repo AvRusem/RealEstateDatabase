@@ -24,7 +24,7 @@ public class FlatRoomDialogTest {
 
     @Test
     void testGetEntityName() {
-        assertEquals("FlatRoom", dialog.getEntityName());
+        assertEquals("Квартира", dialog.getEntityName());
     }
 
     @Test
