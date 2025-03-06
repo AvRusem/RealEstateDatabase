@@ -4,11 +4,12 @@ package org.real_estate_system.io;
 import java.util.List;
 import java.util.Scanner;
 
+import org.real_estate_system.model.Entity;
 import org.real_estate_system.repository.Repository;
 
-public abstract class AbstractDialog<T> {
+public abstract class AbstractDialog<T extends Entity> {
     private final Repository<T> repository;
-    private Scanner scanner;
+    protected Scanner scanner;
 
     protected AbstractDialog(Repository<T> repository) {
         this.repository = repository;
@@ -51,7 +52,7 @@ public abstract class AbstractDialog<T> {
         }
     }
 
-    private void handleChoice(int choice) {
+    public void handleChoice(int choice) {
         switch (choice) {
             case 1:
                 showAll();
@@ -70,7 +71,7 @@ public abstract class AbstractDialog<T> {
         }
     }
 
-    public void showAll() {
+    private void showAll() {
         List<T> entities = repository.getAll();
         if (entities.isEmpty()) {
             System.out.println("Список пуст.");
@@ -81,13 +82,13 @@ public abstract class AbstractDialog<T> {
         }
     }
 
-    public void create() {
+    private void create() {
         T entity = read();
         repository.create(entity);
         System.out.println("Сохранено.");
     }
 
-    public void update() {
+    private void update() {
         List<T> entities = repository.getAll();
         if (entities.isEmpty()) {
             System.out.println("Список пуст.");
@@ -114,7 +115,7 @@ public abstract class AbstractDialog<T> {
         }
     }
 
-    public void delete() {
+    private void delete() {
         List<T> entities = repository.getAll();
         if (entities.isEmpty()) {
             System.out.println("Список пуст.");
